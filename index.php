@@ -14,6 +14,34 @@
         <input style="width:600px; margin-left:250px;"  type="text" class="form-control" id="live_search" autocomplate="off"
         placeholder="Ara...">
     </div>
+
+    <div class="aramasonucu"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
+    <script type="text/javascript">
+
+$(document).ready(function(){
+    
+        $("#live_search").keyup(function(){
+            var input=$(this).val();    
+        //alert (input);  
+        if(input !=""){
+            $ajax({
+                url:"livesearch.php",
+                method:"POST",
+                data:{ input:input },
+
+                success:function(data){
+                    $(".aramasonucu").html(data);
+                }
+
+            });
+        }else{
+            $(".aramasonucu").css("display","none");
+        }
+      });
+    });
+
+
+    </script>
 </body>
 </html>

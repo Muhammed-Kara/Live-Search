@@ -26,9 +26,9 @@ if (isset($_POST["buton"])) {
     $sonuc = mysqli_query($baglan, $sql);
 
     if ($sonuc) {
-        // Başarı mesajı gösterebilirsiniz
+        
         echo "<p>Veri başarıyla kaydedildi.</p>";
-        // Sayfayı yeniden yüklemeden formun yeniden gönderilmesini önlemek için yönlendirme yapın
+        
         header("Location: " . $_SERVER['PHP_SELF']);
         exit();
     } else {
@@ -43,7 +43,7 @@ mysqli_close($baglan);
     <input type="text" name="anahtar" placeholder="Veri İsmi" required id="veri_isim">
     <input type="text" name="aciklama" placeholder="Açıklama" required id="acıklama">
     <input type="text" name="baslik" placeholder="Başlık" required id="baslik">
-    <input type="submit" name="buton" value="Gönder">
+   <button  type="submit" name="buton" value="Gönder">Veri Tabanına Kaydet</button>
 </form>
 
 </body>
