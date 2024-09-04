@@ -23,15 +23,15 @@ $(document).ready(function(){
     
         $("#live_search").keyup(function(){
             var input=$(this).val();    
-        //alert (input);  
+        alert (input);  
         if(input !=""){
-            $ajax({
+            $.ajax({
                 url:"livesearch.php",
                 method:"POST",
                 data:{ input:input },
 
                 success:function(data){
-                    $(".aramasonucu").html(data);
+                    $("#aramasonucu").html(data);
                 }
 
             });
