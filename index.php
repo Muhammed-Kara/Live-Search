@@ -15,7 +15,7 @@
         placeholder="Ara...">
     </div>
 
-    <div class="aramasonucu"></div>
+    <div id="aramasonucu"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
     <script type="text/javascript">
 
@@ -23,12 +23,12 @@ $(document).ready(function(){
     
         $("#live_search").keyup(function(){
             var input=$(this).val();    
-        alert (input);  
+        //alert (input);  
         if(input !=""){
             $.ajax({
                 url:"livesearch.php",
                 method:"POST",
-                data:{ input:input },
+                data:{ input:input},
 
                 success:function(data){
                     $("#aramasonucu").html(data);
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
             });
         }else{
-            $(".aramasonucu").css("display","none");
+            $("#aramasonucu").css("display","none");
         }
       });
     });
